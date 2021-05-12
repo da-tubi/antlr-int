@@ -114,3 +114,6 @@ fragment LETTER
 MINUS
     : '-'
     ;
+
+WS  : [ \r\n\t]+ -> channel(HIDDEN)
+    ;
