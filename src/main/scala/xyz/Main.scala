@@ -25,7 +25,7 @@ object Main {
   def main(args: Array[String]): Unit = {
     val parser = parse(
       """
-        |model options(batch=10.0);
+        |model options(batch=10);
         |""".stripMargin)
     val astBuilder = new SampleAstBuilder
     astBuilder.visit(parser.singleStatement())

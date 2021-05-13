@@ -6,7 +6,6 @@ singleStatement
 
 statement
     : MODEL OPTIONS '(' optionList ')' # debugModel
-    | .*?              # passThrough
     ;
 
 qualifiedName: identifier ('.' identifier)*;

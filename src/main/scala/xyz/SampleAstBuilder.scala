@@ -2,7 +2,7 @@ package xyz
 
 import org.antlr.v4.runtime.tree.ParseTree
 import org.apache.spark.sql.catalyst.parser.ParserUtils.{string, withOrigin}
-import xyz.SampleParser.{OptionContext, OptionListContext, PassThroughContext, QualifiedNameContext, SingleStatementContext}
+import xyz.SampleParser.{OptionContext, OptionListContext, QualifiedNameContext, SingleStatementContext}
 
 import scala.collection.JavaConverters.asScalaBufferConverter
 
@@ -14,11 +14,6 @@ class SampleAstBuilder extends SampleBaseVisitor[AnyRef] {
       visit(ctx.statement)
     }
     ""
-  }
-
-  override def visitPassThrough(ctx: PassThroughContext): AnyRef = {
-    println("==> visitPassThrough")
-    null
   }
 
   override def visitOptionList(ctx: OptionListContext): Map[String, String] =
