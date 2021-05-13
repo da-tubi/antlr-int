@@ -5,7 +5,7 @@ singleStatement
     ;
 
 statement
-    : MODEL OPTIONS optionList # debugModel
+    : MODEL OPTIONS '(' optionList ')' # debugModel
     | .*?              # passThrough
     ;
 
@@ -65,7 +65,7 @@ BACKQUOTED_IDENTIFIER
     : '`' ( ~'`' | '``' )* '`'
     ;
 
-optionList: '(' option (',' option)* ')';
+optionList: option (',' option)* ;
 
 option
     : key=optionKey EQ value=optionValue
