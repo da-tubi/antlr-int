@@ -5,7 +5,7 @@ singleStatement
     ;
 
 statement
-    : MODEL OPTIONS '(' optionList ')' # debugModel
+    : MODEL OPTIONS optionValue # debugModel
     ;
 
 qualifiedName: identifier ('.' identifier)*;

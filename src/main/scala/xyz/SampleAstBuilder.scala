@@ -49,7 +49,7 @@ class SampleAstBuilder extends SampleBaseVisitor[AnyRef] {
 
   override def visitDebugModel(ctx: SampleParser.DebugModelContext): AnyRef = {
     println("==> visitDebugModel")
-    visitOptionList(ctx.optionList())
+    visitOptionValue(ctx.optionValue())
   }
 
   /**
@@ -100,7 +100,11 @@ class SampleAstBuilder extends SampleBaseVisitor[AnyRef] {
    * @param ctx the parse tree
    * @return the visitor result
    */
-  override def visitOptionValue(ctx: SampleParser.OptionValueContext): AnyRef = ???
+  override def visitOptionValue(ctx: SampleParser.OptionValueContext): AnyRef = {
+    println("==> visitOptionValue")
+    println(ctx.getText)
+    ""
+  }
 
   /**
    * Visit a parse tree produced by {@link SampleParser# booleanValue}.
