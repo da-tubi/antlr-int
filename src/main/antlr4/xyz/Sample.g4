@@ -74,11 +74,7 @@ optionKey
     : qualifiedName
     ;
 
-optionValue
-    : INTEGER_VALUE
-    | FLOATING_VALUE
-    | booleanValue
-    | STRING
+optionValue: INTEGER_VALUE
     ;
 
 INTEGER_VALUE

@@ -25,23 +25,14 @@ class SampleAstBuilder extends SampleBaseVisitor[AnyRef] {
   override def visitOption(ctx: OptionContext): (String, String) = {
     println("==> visitOption")
     // TODO: find a more scala way?
-    val value: String = if (ctx.value.booleanValue() != null) {
-      if (ctx.value.booleanValue().TRUE() != null)
-        "true"
-      else {
-        "false"
-      }
-    } else if (ctx.value.FLOATING_VALUE() != null) {
-      println(ctx.value.getText)
-      ctx.value.FLOATING_VALUE.getSymbol.getText
-    } else if (ctx.value.INTEGER_VALUE() != null) {
+    if (ctx.value.INTEGER_VALUE() != null) {
       println(ctx.value.getText)
       ctx.value.INTEGER_VALUE.getSymbol.getText
     } else {
-      string(ctx.value.STRING)
+      ""
     }
 
-    visitQualifiedName(ctx.key.qualifiedName()) -> value
+    visitQualifiedName(ctx.key.qualifiedName()) -> ""
   }
 
   override def visitQualifiedName(ctx: QualifiedNameContext): String =
