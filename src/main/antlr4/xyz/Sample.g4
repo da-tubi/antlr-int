@@ -5,7 +5,7 @@ singleStatement
     ;
 
 statement
-    : MODEL optionList # debugModel
+    : MODEL OPTIONS optionList # debugModel
     | .*?              # passThrough
     ;
 
